@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap" rel="stylesheet">
+
+    <title>POKÉDEX</title>
+
     <link rel="stylesheet" href="src/css/styles.css">
     <link rel="icon" type="image/png" href="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png">
 
@@ -11,7 +17,7 @@
 </head>
 <body>
     <main class="pokedex-container">
-        <h1 class="main-title">Pokedex</h1>
+        <h1 class="main-title">POKÉDEX</h1>
 
         <div id="poke-card">
             <div class="pokemon-img-container">
@@ -22,18 +28,17 @@
             <p id="pokemon-id">#000</p>
 
             <div class="types" id="pokemon-types"></div>
-
-        </div>
-
-        <div id="buttons">
-            <button class="prev" type="button">Previous</button>
-            <button class="next"type="button">Next</button>
+        
+            <div id="buttons">
+                <button class="prev" type="button">Previous</button>
+                <button class="next"type="button">Next</button>
+            </div>
         </div>
     </main>
 
     <!--Modal-->
     <div id="pokemon-modal" class="modal hidden">
-        <div class="model-content">
+        <div class="modal-content">
             <button class="close-modal">x</button>
             <img id="modal-img" src="" alt="Pokemon Image">
             <h2 id="modal-name"></h2>

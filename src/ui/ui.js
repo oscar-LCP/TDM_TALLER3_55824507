@@ -53,7 +53,30 @@ function showModal(pokemon) {
     
     pokemon.stats.forEach(stat => {
         const li = document.createElement("li");
-        li.textContent = `${capitalize(stat.stat)}: ${stat.base}`;
+        
+        const statName = document.createElement("span");
+        statName.classList.add("stat-name");
+        statName.textContent = capitalize(stat.stat);
+
+        const barContainer = document.createElement("div");
+        barContainer.classList.add("stat-bar");
+
+        const bar = document.createElement("div");
+        bar.classList.add("stat-bar-fill");
+
+        const maxStat = 255;
+
+        const percentage = Math.min((stat.base / maxStat) * 100, 100);
+        bar.style.width = `${percentage}%`;
+
+        const statValue = document.createElement("span");
+        statValue.classList.add("stat-value");
+        statValue.textContent = stat.base;
+
+        barContainer.appendChild(bar);
+        li.appendChild(statName);
+        li.appendChild(barContainer);
+        li.appendChild(statValue);
         statsList.appendChild(li);
     });
 
